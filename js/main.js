@@ -30,15 +30,15 @@ jQuery(function($) {'use strict';
 		}
 
 		var $portfolio_selectors = $('.portfolio-filter >li>a');
-		
+
 		if($portfolio_selectors.length) {
-			
+
 			var $portfolio = $('.portfolio-items');
 			$portfolio.isotope({
 				itemSelector : '.portfolio-item',
 				layoutMode : 'fitRows'
 			});
-			
+
 			$portfolio_selectors.on('click', function(){
 				$portfolio_selectors.removeClass('active');
 				$(this).addClass('active');
@@ -47,6 +47,14 @@ jQuery(function($) {'use strict';
 				return false;
 			});
 		}
+
+	  $('.your-class').slick({
+		  dots: true,
+		  infinite: true,
+		  autoplay: true,
+		  autoplaySpeed: 2000,
+		  adaptiveHeight: true
+	  });
 
 	});
 
@@ -57,7 +65,7 @@ jQuery(function($) {'use strict';
 		options = $.extend({}, options || {}, $this.data('countToOptions') || {});
 		$this.countTo(options);
 	}
-		
+
 	// Search
 	$('.fa-search').on('click', function() {
 		$('.field-toggle').fadeToggle(200);
